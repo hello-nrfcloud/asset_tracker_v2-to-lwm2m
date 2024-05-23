@@ -1,0 +1,48 @@
+{
+  "appId": "GROUND_FIX",
+  "messageType": "DATA",
+  "data": {
+    "lte": [
+      {
+        "eci": 84561173,
+        "mcc": 240,
+        "mnc": 7,
+        "tac": 34209,
+        "earfcn": 6400,
+        "rsrp": -91,
+        "rsrq": -10.5,
+        "adv": 65,
+        "nmr": [
+          {
+            "earfcn": 6400,
+            "pci": 98,
+            "rsrp": -93,
+            "rsrq": -11.5,
+            "timeDiff": 24
+          },
+          {
+            "earfcn": 6400,
+            "pci": 177,
+            "rsrp": -98,
+            "rsrq": -14,
+            "timeDiff": 33
+          },
+          {
+            "earfcn": 6400,
+            "pci": 62,
+            "rsrp": -99,
+            "rsrq": -14,
+            "timeDiff": 37
+          },
+          {
+            "earfcn": 6400,
+            "pci": 72,
+            "rsrp": -103,
+            "rsrq": -20,
+            "timeDiff": 44
+          }
+        ]
+      }
+    ]
+  }
+}

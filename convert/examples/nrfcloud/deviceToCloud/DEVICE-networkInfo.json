@@ -1,0 +1,16 @@
+{
+  "appId": "DEVICE",
+  "messageType": "DATA",
+  "ts": 1676369307222,
+  "data": {
+    "networkInfo": {
+      "currentBand": 20,
+      "networkMode": "LTE-M",
+      "rsrp": -79,
+      "areaCode": 6,
+      "mccmnc": 24001,
+      "cellID": 56879116,
+      "ipAddress": "10.160.243.113"
+    }
+  }
+}
