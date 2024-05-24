@@ -8,7 +8,7 @@ import {
 	IoTDataPlaneClient,
 	PublishCommand,
 } from '@aws-sdk/client-iot-data-plane'
-import { lwm2mToSenML } from '@hello.nrfcloud.com/proto-map'
+import { lwm2mToSenML } from '@hello.nrfcloud.com/proto-map/senml'
 
 const iotData = new IoTDataPlaneClient()
 

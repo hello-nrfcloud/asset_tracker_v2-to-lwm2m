@@ -1,7 +1,7 @@
 import {
 	LwM2MObjectID,
 	type LwM2MObjectInstance,
-} from '@hello.nrfcloud.com/proto-map'
+} from '@hello.nrfcloud.com/proto-map/lwm2m'
 
 const toInstance = (
 	ObjectID: LwM2MObjectID,

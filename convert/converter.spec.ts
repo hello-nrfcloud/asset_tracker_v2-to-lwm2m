@@ -1,16 +1,16 @@
 import { describe, it } from 'node:test'
 import assert from 'node:assert/strict'
-import AIR_PRESS from './examples/nrfcloud/deviceToCloud/AIR_PRESS.json' assert { type: 'json' }
-import AIR_QUAL from './examples/nrfcloud/deviceToCloud/AIR_QUAL.json' assert { type: 'json' }
-import BUTTON from './examples/nrfcloud/deviceToCloud/BUTTON.json' assert { type: 'json' }
-import DEVICE from './examples/nrfcloud/deviceToCloud/DEVICE-deviceInfo.json' assert { type: 'json' }
-import GNSS from './examples/nrfcloud/deviceToCloud/GNSS.json' assert { type: 'json' }
-import HUMID from './examples/nrfcloud/deviceToCloud/HUMID.json' assert { type: 'json' }
-import RSRP from './examples/nrfcloud/deviceToCloud/RSRP.json' assert { type: 'json' }
-import TEMP from './examples/nrfcloud/deviceToCloud/TEMP.json' assert { type: 'json' }
-import battery from './examples/BATTERY.json' assert { type: 'json' }
-import deviceWithEnergyEstimate from './examples/DEVICE-networkInfo-with-eest.json' assert { type: 'json' }
-import solar from './examples/SOLAR.json' assert { type: 'json' }
+import AIR_PRESS from './examples/nrfcloud/deviceToCloud/AIR_PRESS.json'
+import AIR_QUAL from './examples/nrfcloud/deviceToCloud/AIR_QUAL.json'
+import BUTTON from './examples/nrfcloud/deviceToCloud/BUTTON.json'
+import DEVICE from './examples/nrfcloud/deviceToCloud/DEVICE-deviceInfo.json'
+import GNSS from './examples/nrfcloud/deviceToCloud/GNSS.json'
+import HUMID from './examples/nrfcloud/deviceToCloud/HUMID.json'
+import RSRP from './examples/nrfcloud/deviceToCloud/RSRP.json'
+import TEMP from './examples/nrfcloud/deviceToCloud/TEMP.json'
+import battery from './examples/BATTERY.json'
+import deviceWithEnergyEstimate from './examples/DEVICE-networkInfo-with-eest.json'
+import solar from './examples/SOLAR.json'
 import {
 	LwM2MObjectID,
 	type BatteryAndPower_14202,
@@ -20,7 +20,7 @@ import {
 	type Environment_14205,
 	type Geolocation_14201,
 	type LwM2MObjectInstance,
-} from '@hello.nrfcloud.com/proto-map'
+} from '@hello.nrfcloud.com/proto-map/lwm2m'
 import { converter } from './converter.js'
 
 void describe('convert()', () => {
