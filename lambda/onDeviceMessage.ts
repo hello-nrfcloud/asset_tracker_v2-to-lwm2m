@@ -27,10 +27,11 @@ const h = async (event: {
 
 	const converted = converter(message)
 	if (converted === null) {
-		console.error(`Failed to convert message`, JSON.stringify(message))
+		log.error(`Failed to convert message`, JSON.stringify(message))
 		track('deviceMessage:error', MetricUnit.Count, 1)
 		return
 	}
+	log.debug('converted', { converted })
 	track('deviceMessage:success', MetricUnit.Count, 1)
 
 	const senMl = lwm2mToSenML(converted)
