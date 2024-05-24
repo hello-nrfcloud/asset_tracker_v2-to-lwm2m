@@ -34,13 +34,20 @@ const h = async (event: {
 	log.debug('converted', { converted })
 	track('deviceMessage:success', MetricUnit.Count, 1)
 
-	const senMl = lwm2mToSenML(converted)
+	const maybeSenML = lwm2mToSenML(converted)
+	if ('errors' in maybeSenML) {
+		log.error('Failed to convert to SenML', { errors: maybeSenML.errors })
+		track('deviceMessage:error', MetricUnit.Count, 1)
+		return
+	}
 
 	// Republish as SenML
+	const topic = `data/m/d/${deviceId}/d2c/senml`
+	log.debug('topic', topic)
 	await iotData.send(
 		new PublishCommand({
-			topic: `data/m/d/${deviceId}/d2c/senml`,
-			payload: JSON.stringify(senMl),
+			topic,
+			payload: JSON.stringify(maybeSenML.senML),
 		}),
 	)
 }
