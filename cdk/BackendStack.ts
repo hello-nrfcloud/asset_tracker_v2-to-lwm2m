@@ -1,6 +1,7 @@
 import { LambdaSource } from '@bifravst/aws-cdk-lambda-helpers/cdk'
 import type { PackedLayer } from '@bifravst/aws-cdk-lambda-helpers/layer'
-import { App, aws_lambda as Lambda, Stack, type Environment } from 'aws-cdk-lib'
+import type { App } from 'aws-cdk-lib'
+import { aws_lambda as Lambda, Stack, type Environment } from 'aws-cdk-lib'
 import type { BackendLambdas } from './packBackendLambdas.js'
 import { ConvertDeviceMessages } from './resources/ConvertDeviceMessages.js'
 import { STACK_NAME } from './stackConfig.js'
