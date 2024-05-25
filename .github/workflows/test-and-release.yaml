@@ -19,8 +19,15 @@ jobs:
   unit-tests:
     runs-on: ubuntu-22.04
 
+    outputs:
+      ref: ${{ steps.ref.outputs.ref }}
+
     steps:
       - uses: actions/checkout@v4
+
+      - name: store checkout out version
+        id: ref
+        run: echo "ref=${{ github.sha }}" >> $GITHUB_OUTPUT
 
       - uses: actions/setup-node@v4
         with:
@@ -78,4 +85,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           gh workflow run deploy.yaml \
-            -F ref=${{ needs.e2e-tests.outputs.ref }}
+            -F ref=${{ needs.unit-tests.outputs.ref }}
