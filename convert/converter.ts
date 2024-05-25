@@ -33,8 +33,8 @@ const converters: Array<
 	[
 		isAppId('SOLAR'),
 		(data, ts) =>
-			toInstance(LwM2MObjectID.BatteryAndPower_14202, {
-				1: parseFloat(data as string),
+			toInstance(LwM2MObjectID.SolarCharge_14210, {
+				0: parseFloat(data as string),
 				99: new Date(ts),
 			}),
 	],

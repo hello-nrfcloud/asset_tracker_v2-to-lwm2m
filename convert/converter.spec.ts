@@ -20,6 +20,7 @@ import {
 	type Environment_14205,
 	type Geolocation_14201,
 	type LwM2MObjectInstance,
+	type SolarCharge_14210,
 } from '@hello.nrfcloud.com/proto-map/lwm2m'
 import { converter } from './converter.js'
 
@@ -28,11 +29,11 @@ void describe('convert()', () => {
 		for (const [message, expected] of [
 			[
 				solar,
-				<BatteryAndPower_14202>{
-					ObjectID: LwM2MObjectID.BatteryAndPower_14202,
+				<SolarCharge_14210>{
+					ObjectID: LwM2MObjectID.SolarCharge_14210,
 					ObjectVersion: '1.0',
 					Resources: {
-						1: 3.123456,
+						0: 3.123456,
 						99: new Date(solar.ts),
 					},
 				},
