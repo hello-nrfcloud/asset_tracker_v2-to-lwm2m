@@ -48,59 +48,6 @@ const converters: Array<
 			}),
 	],
 	[
-		(appId, data) =>
-			appId === 'DEVICE' && typeof data === 'object' && 'networkInfo' in data,
-		(data, ts) => {
-			const {
-				currentBand,
-				networkMode,
-				rsrp,
-				areaCode,
-				mccmnc,
-				cellID,
-				ipAddress,
-				eest,
-			} = (data as Record<string, any>).networkInfo
-			return toInstance(LwM2MObjectID.ConnectionInformation_14203, {
-				1: currentBand,
-				0: networkMode,
-				2: rsrp,
-				3: areaCode,
-				5: mccmnc,
-				4: cellID,
-				6: ipAddress,
-				11: eest,
-				99: ts,
-			})
-		},
-	],
-
-	[
-		(appId, data) =>
-			appId === 'DEVICE' && typeof data === 'object' && 'deviceInfo' in data,
-		(data, ts) => {
-			const { imei, iccid, modemFirmware, board, appVersion } = (
-				data as Record<string, any>
-			).deviceInfo
-			return toInstance(LwM2MObjectID.DeviceInformation_14204, {
-				0: imei,
-				1: iccid,
-				2: modemFirmware,
-				4: board,
-				3: appVersion,
-				99: ts,
-			})
-		},
-	],
-	[
-		isAppId('RSRP'),
-		(data, ts) =>
-			toInstance(LwM2MObjectID.ConnectionInformation_14203, {
-				2: parseFloat(data as string),
-				99: ts,
-			}),
-	],
-	[
 		isAppId('HUMID'),
 		(data, ts) =>
 			toInstance(LwM2MObjectID.Environment_14205, {

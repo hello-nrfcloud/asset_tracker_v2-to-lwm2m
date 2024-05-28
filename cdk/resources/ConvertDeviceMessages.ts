@@ -57,17 +57,7 @@ export class ConvertDeviceMessages extends Construct {
 					FROM 'data/+/+/+/+'
 					WHERE messageType = 'DATA'
 					AND isUndefined(data) = False
-					AND (${[
-						'SOLAR',
-						'BATTERY',
-						'RSRP',
-						'HUMID',
-						'TEMP',
-						'AIR_QUAL',
-						'AIR_PRESS',
-						'BUTTON',
-						'DEVICE',
-					]
+					AND (${['SOLAR', 'BATTERY', 'HUMID', 'TEMP', 'AIR_QUAL', 'AIR_PRESS', 'BUTTON']
 						.map((appId) => `appId = '${appId}'`)
 						.join(' OR ')})
 				`,

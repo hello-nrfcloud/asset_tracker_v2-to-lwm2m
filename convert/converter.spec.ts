@@ -3,19 +3,14 @@ import assert from 'node:assert/strict'
 import AIR_PRESS from './examples/nrfcloud/deviceToCloud/AIR_PRESS.json'
 import AIR_QUAL from './examples/nrfcloud/deviceToCloud/AIR_QUAL.json'
 import BUTTON from './examples/nrfcloud/deviceToCloud/BUTTON.json'
-import DEVICE from './examples/nrfcloud/deviceToCloud/DEVICE-deviceInfo.json'
 import HUMID from './examples/nrfcloud/deviceToCloud/HUMID.json'
-import RSRP from './examples/nrfcloud/deviceToCloud/RSRP.json'
 import TEMP from './examples/nrfcloud/deviceToCloud/TEMP.json'
 import battery from './examples/BATTERY.json'
-import deviceWithEnergyEstimate from './examples/DEVICE-networkInfo-with-eest.json'
 import solar from './examples/SOLAR.json'
 import {
 	LwM2MObjectID,
 	type BatteryAndPower_14202,
 	type ButtonPress_14220,
-	type ConnectionInformation_14203,
-	type DeviceInformation_14204,
 	type Environment_14205,
 	type LwM2MObjectInstance,
 	type SolarCharge_14210,
@@ -48,35 +43,6 @@ void describe('convert()', () => {
 				},
 			],
 			[
-				deviceWithEnergyEstimate,
-				<ConnectionInformation_14203>{
-					ObjectID: LwM2MObjectID.ConnectionInformation_14203,
-					ObjectVersion: '1.0',
-					Resources: {
-						1: 20,
-						0: 'LTE-M',
-						2: -99,
-						3: 30401,
-						5: 24201,
-						4: 21679616,
-						6: '100.74.127.55',
-						11: 7,
-						99: deviceWithEnergyEstimate.ts,
-					},
-				},
-			],
-			[
-				RSRP,
-				<ConnectionInformation_14203>{
-					ObjectID: LwM2MObjectID.ConnectionInformation_14203,
-					ObjectVersion: '1.0',
-					Resources: {
-						2: -96,
-						99: RSRP.ts,
-					},
-				},
-			],
-			[
 				AIR_PRESS,
 				<Environment_14205>{
 					ObjectID: LwM2MObjectID.Environment_14205,
@@ -95,21 +61,6 @@ void describe('convert()', () => {
 					Resources: {
 						10: 177,
 						99: AIR_QUAL.ts,
-					},
-				},
-			],
-			[
-				DEVICE,
-				<DeviceInformation_14204>{
-					ObjectID: LwM2MObjectID.DeviceInformation_14204,
-					ObjectVersion: '1.0',
-					Resources: {
-						0: '350457794611739',
-						1: '8931080620054223678',
-						2: 'mfw_nrf9160_1.3.3',
-						4: 'thingy91_nrf9160',
-						3: '0.0.0-development',
-						99: DEVICE.ts,
 					},
 				},
 			],
