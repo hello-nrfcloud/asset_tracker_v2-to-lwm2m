@@ -56,8 +56,20 @@ export class ConvertDeviceMessages extends Construct {
 						topic() as topic
 					FROM 'data/+/+/+/+'
 					WHERE messageType = 'DATA'
-					AND isUndefined(appId) = False
 					AND isUndefined(data) = False
+					AND (${[
+						'SOLAR',
+						'BATTERY',
+						'RSRP',
+						'HUMID',
+						'TEMP',
+						'AIR_QUAL',
+						'AIR_PRESS',
+						'BUTTON',
+						'DEVICE',
+					]
+						.map((appId) => `appId = '${appId}'`)
+						.join(' OR ')})
 				`,
 				actions: [
 					{
