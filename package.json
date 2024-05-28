@@ -29,7 +29,7 @@
     "@aws-sdk/client-iot-data-plane": "3.583.0",
     "@bifravst/aws-cdk-lambda-helpers": "1.7.35",
     "@bifravst/ci": "2.0.1",
-    "@bifravst/eslint-config-typescript": "6.1.0",
+    "@bifravst/eslint-config-typescript": "6.1.1",
     "@bifravst/prettier-config": "1.0.0",
     "@commitlint/config-conventional": "19.2.2",
     "@types/node": "20.12.12",
@@ -75,8 +75,8 @@
   "prettier": "@bifravst/prettier-config",
   "dependencies": {
     "@aws-lambda-powertools/metrics": "2.1.1",
-    "@hello.nrfcloud.com/lambda-helpers": "1.1.26",
-    "@hello.nrfcloud.com/proto-map": "9.1.0",
+    "@hello.nrfcloud.com/lambda-helpers": "1.1.30",
+    "@hello.nrfcloud.com/proto-map": "10.0.0",
     "@middy/core": "5.3.5"
   }
 }

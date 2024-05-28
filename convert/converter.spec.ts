@@ -32,7 +32,7 @@ void describe('convert()', () => {
 					ObjectVersion: '1.0',
 					Resources: {
 						0: 3.123456,
-						99: new Date(solar.ts),
+						99: solar.ts,
 					},
 				},
 			],
@@ -43,7 +43,7 @@ void describe('convert()', () => {
 					ObjectVersion: '1.0',
 					Resources: {
 						0: 94,
-						99: new Date(battery.ts),
+						99: battery.ts,
 					},
 				},
 			],
@@ -61,7 +61,7 @@ void describe('convert()', () => {
 						4: 21679616,
 						6: '100.74.127.55',
 						11: 7,
-						99: new Date(deviceWithEnergyEstimate.ts),
+						99: deviceWithEnergyEstimate.ts,
 					},
 				},
 			],
@@ -72,7 +72,7 @@ void describe('convert()', () => {
 					ObjectVersion: '1.0',
 					Resources: {
 						2: -96,
-						99: new Date(RSRP.ts),
+						99: RSRP.ts,
 					},
 				},
 			],
@@ -83,7 +83,7 @@ void describe('convert()', () => {
 					ObjectVersion: '1.0',
 					Resources: {
 						2: 1023.1,
-						99: new Date(AIR_PRESS.ts),
+						99: AIR_PRESS.ts,
 					},
 				},
 			],
@@ -94,7 +94,7 @@ void describe('convert()', () => {
 					ObjectVersion: '1.0',
 					Resources: {
 						10: 177,
-						99: new Date(AIR_QUAL.ts),
+						99: AIR_QUAL.ts,
 					},
 				},
 			],
@@ -109,7 +109,7 @@ void describe('convert()', () => {
 						2: 'mfw_nrf9160_1.3.3',
 						4: 'thingy91_nrf9160',
 						3: '0.0.0-development',
-						99: new Date(DEVICE.ts),
+						99: DEVICE.ts,
 					},
 				},
 			],
@@ -120,7 +120,7 @@ void describe('convert()', () => {
 					ObjectVersion: '1.0',
 					Resources: {
 						0: 25.73,
-						99: new Date(TEMP.ts),
+						99: TEMP.ts,
 					},
 				},
 			],
@@ -131,7 +131,7 @@ void describe('convert()', () => {
 					ObjectVersion: '1.0',
 					Resources: {
 						1: 23.16,
-						99: new Date(HUMID.ts),
+						99: HUMID.ts,
 					},
 				},
 			],
@@ -142,7 +142,7 @@ void describe('convert()', () => {
 					ObjectVersion: '1.0',
 					Resources: {
 						0: 1,
-						99: new Date(BUTTON.ts),
+						99: BUTTON.ts,
 					},
 				},
 			],

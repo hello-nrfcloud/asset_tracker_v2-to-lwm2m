@@ -35,7 +35,7 @@ const converters: Array<
 		(data, ts) =>
 			toInstance(LwM2MObjectID.SolarCharge_14210, {
 				0: parseFloat(data as string),
-				99: new Date(ts),
+				99: ts,
 			}),
 	],
 	// battery
@@ -44,7 +44,7 @@ const converters: Array<
 		(data, ts) =>
 			toInstance(LwM2MObjectID.BatteryAndPower_14202, {
 				0: parseInt(data as string, 10),
-				99: new Date(ts),
+				99: ts,
 			}),
 	],
 	[
@@ -70,7 +70,7 @@ const converters: Array<
 				4: cellID,
 				6: ipAddress,
 				11: eest,
-				99: new Date(ts),
+				99: ts,
 			})
 		},
 	],
@@ -88,7 +88,7 @@ const converters: Array<
 				2: modemFirmware,
 				4: board,
 				3: appVersion,
-				99: new Date(ts),
+				99: ts,
 			})
 		},
 	],
@@ -97,7 +97,7 @@ const converters: Array<
 		(data, ts) =>
 			toInstance(LwM2MObjectID.ConnectionInformation_14203, {
 				2: parseFloat(data as string),
-				99: new Date(ts),
+				99: ts,
 			}),
 	],
 	[
@@ -105,7 +105,7 @@ const converters: Array<
 		(data, ts) =>
 			toInstance(LwM2MObjectID.Environment_14205, {
 				1: parseFloat(data as string),
-				99: new Date(ts),
+				99: ts,
 			}),
 	],
 	[
@@ -113,7 +113,7 @@ const converters: Array<
 		(data, ts) =>
 			toInstance(LwM2MObjectID.Environment_14205, {
 				0: parseFloat(data as string),
-				99: new Date(ts),
+				99: ts,
 			}),
 	],
 	[
@@ -121,7 +121,7 @@ const converters: Array<
 		(data, ts) =>
 			toInstance(LwM2MObjectID.Environment_14205, {
 				10: parseFloat(data as string),
-				99: new Date(ts),
+				99: ts,
 			}),
 	],
 	[
@@ -129,7 +129,7 @@ const converters: Array<
 		(data, ts) =>
 			toInstance(LwM2MObjectID.Environment_14205, {
 				2: parseFloat(data as string) * 10,
-				99: new Date(ts),
+				99: ts,
 			}),
 	],
 	[
@@ -137,7 +137,7 @@ const converters: Array<
 		(data, ts) =>
 			toInstance(LwM2MObjectID.ButtonPress_14220, {
 				0: parseInt(data as string, 10),
-				99: new Date(ts),
+				99: ts,
 			}),
 	],
 ]
