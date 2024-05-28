@@ -140,27 +140,6 @@ const converters: Array<
 				99: new Date(ts),
 			}),
 	],
-	[
-		(appId, data) =>
-			appId === 'GNSS' &&
-			typeof data === 'object' &&
-			'lat' in data &&
-			'lng' in data &&
-			'acc' in data,
-		(data, ts) => {
-			const { lat, lng, acc, alt, spd, hdg } = data as Record<string, any>
-			return toInstance(LwM2MObjectID.Geolocation_14201, {
-				1: lat,
-				0: lng,
-				3: acc,
-				2: alt,
-				4: spd,
-				5: hdg,
-				6: 'GNSS',
-				99: new Date(ts),
-			})
-		},
-	],
 ]
 
 export const converter = (

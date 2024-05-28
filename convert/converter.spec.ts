@@ -4,7 +4,6 @@ import AIR_PRESS from './examples/nrfcloud/deviceToCloud/AIR_PRESS.json'
 import AIR_QUAL from './examples/nrfcloud/deviceToCloud/AIR_QUAL.json'
 import BUTTON from './examples/nrfcloud/deviceToCloud/BUTTON.json'
 import DEVICE from './examples/nrfcloud/deviceToCloud/DEVICE-deviceInfo.json'
-import GNSS from './examples/nrfcloud/deviceToCloud/GNSS.json'
 import HUMID from './examples/nrfcloud/deviceToCloud/HUMID.json'
 import RSRP from './examples/nrfcloud/deviceToCloud/RSRP.json'
 import TEMP from './examples/nrfcloud/deviceToCloud/TEMP.json'
@@ -18,7 +17,6 @@ import {
 	type ConnectionInformation_14203,
 	type DeviceInformation_14204,
 	type Environment_14205,
-	type Geolocation_14201,
 	type LwM2MObjectInstance,
 	type SolarCharge_14210,
 } from '@hello.nrfcloud.com/proto-map/lwm2m'
@@ -145,24 +143,6 @@ void describe('convert()', () => {
 					Resources: {
 						0: 1,
 						99: new Date(BUTTON.ts),
-					},
-				},
-			],
-			[
-				GNSS,
-				<Geolocation_14201>{
-					ObjectID: LwM2MObjectID.Geolocation_14201,
-					// ObjectInstanceID: 0, // 0: device, 1: ground-fix, 2: single-cell
-					ObjectVersion: '1.0',
-					Resources: {
-						0: 10.437692463102255,
-						1: 63.43308707524497,
-						3: 4.703136444091797,
-						2: 138.33331298828125,
-						4: 0.02938256226480007,
-						5: 185.11207580566406,
-						6: 'GNSS',
-						99: new Date(GNSS.ts),
 					},
 				},
 			],
