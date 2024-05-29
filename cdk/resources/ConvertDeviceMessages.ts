@@ -6,6 +6,7 @@ import type { aws_lambda as Lambda } from 'aws-cdk-lib'
 import { aws_iam as IAM, aws_iot as IoT, Stack } from 'aws-cdk-lib'
 import { Construct } from 'constructs'
 import type { BackendLambdas } from '../packBackendLambdas.js'
+import type { ITable } from 'aws-cdk-lib/aws-dynamodb'
 
 /**
  * Resources needed to convert messages sent by nRF Cloud to the format that hello.nrfcloud.com expects
@@ -16,9 +17,11 @@ export class ConvertDeviceMessages extends Construct {
 		{
 			lambdaSources,
 			layers,
+			devicesTable,
 		}: {
 			lambdaSources: Pick<BackendLambdas, 'onDeviceMessage'>
 			layers: Lambda.ILayerVersion[]
+			devicesTable: ITable
 		},
 	) {
 		super(parent, 'converter')
@@ -43,6 +46,9 @@ export class ConvertDeviceMessages extends Construct {
 			},
 		)
 
+		const topicRuleRole = new IoTActionRole(this).role
+		devicesTable.grantReadData(topicRuleRole)
+
 		const rule = new IoT.CfnTopicRule(this, 'topicRule', {
 			topicRulePayload: {
 				description: `Convert device messages and republish as SenML`,
@@ -60,6 +66,7 @@ export class ConvertDeviceMessages extends Construct {
 					AND (${['SOLAR', 'BATTERY', 'HUMID', 'TEMP', 'AIR_QUAL', 'AIR_PRESS', 'BUTTON']
 						.map((appId) => `appId = '${appId}'`)
 						.join(' OR ')})
+					AND get_dynamodb("${devicesTable.tableName}", "deviceId", topic(3), "${topicRuleRole.roleArn}").model = 'PCA20035+solar'
 				`,
 				actions: [
 					{
@@ -70,7 +77,7 @@ export class ConvertDeviceMessages extends Construct {
 				],
 				errorAction: {
 					republish: {
-						roleArn: new IoTActionRole(this).roleArn,
+						roleArn: topicRuleRole.roleArn,
 						topic: 'errors',
 					},
 				},

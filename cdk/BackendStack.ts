@@ -1,7 +1,13 @@
 import { LambdaSource } from '@bifravst/aws-cdk-lambda-helpers/cdk'
 import type { PackedLayer } from '@bifravst/aws-cdk-lambda-helpers/layer'
 import type { App } from 'aws-cdk-lib'
-import { aws_lambda as Lambda, Stack, type Environment } from 'aws-cdk-lib'
+import {
+	Fn,
+	aws_lambda as Lambda,
+	Stack,
+	aws_dynamodb,
+	type Environment,
+} from 'aws-cdk-lib'
 import type { BackendLambdas } from './packBackendLambdas.js'
 import { ConvertDeviceMessages } from './resources/ConvertDeviceMessages.js'
 import { STACK_NAME } from './stackConfig.js'
@@ -47,6 +53,11 @@ export class BackendStack extends Stack {
 		new ConvertDeviceMessages(this, {
 			layers: lambdaLayers,
 			lambdaSources,
+			devicesTable: aws_dynamodb.Table.fromTableName(
+				this,
+				'devicesTable',
+				Fn.importValue('hello-nrfcloud-backend:devicesTableName'),
+			),
 		})
 
 		new ContinuousDeployment(this, {
