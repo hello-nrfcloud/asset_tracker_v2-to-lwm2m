@@ -66,7 +66,7 @@ export class ConvertDeviceMessages extends Construct {
 					AND (${['SOLAR', 'BATTERY', 'HUMID', 'TEMP', 'AIR_QUAL', 'AIR_PRESS', 'BUTTON']
 						.map((appId) => `appId = '${appId}'`)
 						.join(' OR ')})
-					AND get_dynamodb("${devicesTable.tableName}", "deviceId", topic(3), "${topicRuleRole.roleArn}").model = 'PCA20035+solar'
+					AND get_dynamodb("${devicesTable.tableName}", "deviceId", topic(4), "${topicRuleRole.roleArn}").model IN ["PCA20035+solar", "PCA20065+asset_tracker_v2"]
 				`,
 				actions: [
 					{
