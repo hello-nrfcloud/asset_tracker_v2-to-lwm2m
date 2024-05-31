@@ -32,7 +32,7 @@
     "@bifravst/eslint-config-typescript": "6.1.1",
     "@bifravst/prettier-config": "1.0.0",
     "@commitlint/config-conventional": "19.2.2",
-    "@types/node": "20.12.13",
+    "@types/node": "20.12.14",
     "aws-cdk-lib": "2.143.1",
     "cdk": "2.143.1",
     "check-node-version": "4.2.1",
@@ -75,8 +75,8 @@
   "prettier": "@bifravst/prettier-config",
   "dependencies": {
     "@aws-lambda-powertools/metrics": "2.1.1",
-    "@hello.nrfcloud.com/lambda-helpers": "1.1.32",
-    "@hello.nrfcloud.com/proto-map": "10.0.4",
+    "@hello.nrfcloud.com/lambda-helpers": "1.1.33",
+    "@hello.nrfcloud.com/proto-map": "11.0.0",
     "@middy/core": "5.3.5"
   }
 }

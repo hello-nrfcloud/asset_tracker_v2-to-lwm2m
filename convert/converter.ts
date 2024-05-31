@@ -82,10 +82,13 @@ const converters: Array<
 	[
 		isAppId('BUTTON'),
 		(data, ts) =>
-			toInstance(LwM2MObjectID.ButtonPress_14220, {
-				0: parseInt(data as string, 10),
-				99: ts,
-			}),
+			toInstance(
+				LwM2MObjectID.ButtonPress_14220,
+				{
+					99: ts,
+				},
+				parseInt(data as string, 10),
+			),
 	],
 ]
 

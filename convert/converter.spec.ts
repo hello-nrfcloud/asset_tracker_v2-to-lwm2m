@@ -91,8 +91,8 @@ void describe('convert()', () => {
 				<ButtonPress_14220>{
 					ObjectID: LwM2MObjectID.ButtonPress_14220,
 					ObjectVersion: '1.0',
+					ObjectInstanceID: 1,
 					Resources: {
-						0: 1,
 						99: BUTTON.ts,
 					},
 				},
