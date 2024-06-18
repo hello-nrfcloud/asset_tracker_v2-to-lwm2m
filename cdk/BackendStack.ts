@@ -35,6 +35,8 @@ export class BackendStack extends Stack {
 	) {
 		super(parent, STACK_NAME, {
 			env,
+			description:
+				'Converts legacy asset_tracker_v2 messages to LwM2M used by the hello.nrfcloud.com backend',
 		})
 
 		const baseLayer = new Lambda.LayerVersion(this, 'baseLayer', {
