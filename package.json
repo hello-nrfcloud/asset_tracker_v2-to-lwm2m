@@ -77,6 +77,6 @@
     "@aws-lambda-powertools/metrics": "2.2.0",
     "@hello.nrfcloud.com/lambda-helpers": "1.2.12",
     "@hello.nrfcloud.com/proto-map": "13.0.1",
-    "@middy/core": "5.4.0"
+    "@middy/core": "5.4.1"
   }
 }
