@@ -27,7 +27,7 @@ void describe('convert()', () => {
 					ObjectVersion: '1.0',
 					Resources: {
 						0: 3.123456,
-						99: solar.ts,
+						99: Math.floor(solar.ts / 1000),
 					},
 				},
 			],
@@ -38,7 +38,7 @@ void describe('convert()', () => {
 					ObjectVersion: '1.0',
 					Resources: {
 						0: 94,
-						99: battery.ts,
+						99: Math.floor(battery.ts / 1000),
 					},
 				},
 			],
@@ -49,7 +49,7 @@ void describe('convert()', () => {
 					ObjectVersion: '1.0',
 					Resources: {
 						2: 1023.1,
-						99: AIR_PRESS.ts,
+						99: Math.floor(AIR_PRESS.ts / 1000),
 					},
 				},
 			],
@@ -60,7 +60,7 @@ void describe('convert()', () => {
 					ObjectVersion: '1.0',
 					Resources: {
 						10: 177,
-						99: AIR_QUAL.ts,
+						99: Math.floor(AIR_QUAL.ts / 1000),
 					},
 				},
 			],
@@ -71,7 +71,7 @@ void describe('convert()', () => {
 					ObjectVersion: '1.0',
 					Resources: {
 						0: 25.73,
-						99: TEMP.ts,
+						99: Math.floor(TEMP.ts / 1000),
 					},
 				},
 			],
@@ -82,7 +82,7 @@ void describe('convert()', () => {
 					ObjectVersion: '1.0',
 					Resources: {
 						1: 23.16,
-						99: HUMID.ts,
+						99: Math.floor(HUMID.ts / 1000),
 					},
 				},
 			],
@@ -93,7 +93,7 @@ void describe('convert()', () => {
 					ObjectVersion: '1.0',
 					ObjectInstanceID: 1,
 					Resources: {
-						99: BUTTON.ts,
+						99: Math.floor(BUTTON.ts / 1000),
 					},
 				},
 			],
