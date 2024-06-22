@@ -76,7 +76,7 @@
   "dependencies": {
     "@aws-lambda-powertools/metrics": "2.2.0",
     "@hello.nrfcloud.com/lambda-helpers": "1.2.15",
-    "@hello.nrfcloud.com/proto-map": "13.1.0",
+    "@hello.nrfcloud.com/proto-map": "13.1.1",
     "@middy/core": "5.4.1"
   }
 }
