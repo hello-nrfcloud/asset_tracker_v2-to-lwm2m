@@ -1,12 +1,3 @@
-import { describe, it } from 'node:test'
-import assert from 'node:assert/strict'
-import AIR_PRESS from './examples/nrfcloud/deviceToCloud/AIR_PRESS.json'
-import AIR_QUAL from './examples/nrfcloud/deviceToCloud/AIR_QUAL.json'
-import BUTTON from './examples/nrfcloud/deviceToCloud/BUTTON.json'
-import HUMID from './examples/nrfcloud/deviceToCloud/HUMID.json'
-import TEMP from './examples/nrfcloud/deviceToCloud/TEMP.json'
-import battery from './examples/BATTERY.json'
-import solar from './examples/SOLAR.json'
 import {
 	LwM2MObjectID,
 	type BatteryAndPower_14202,
@@ -15,7 +6,16 @@ import {
 	type LwM2MObjectInstance,
 	type SolarCharge_14210,
 } from '@hello.nrfcloud.com/proto-map/lwm2m'
+import assert from 'node:assert/strict'
+import { describe, it } from 'node:test'
 import { converter } from './converter.js'
+import battery from './examples/BATTERY.json'
+import AIR_PRESS from './examples/nrfcloud/deviceToCloud/AIR_PRESS.json'
+import AIR_QUAL from './examples/nrfcloud/deviceToCloud/AIR_QUAL.json'
+import BUTTON from './examples/nrfcloud/deviceToCloud/BUTTON.json'
+import HUMID from './examples/nrfcloud/deviceToCloud/HUMID.json'
+import TEMP from './examples/nrfcloud/deviceToCloud/TEMP.json'
+import solar from './examples/SOLAR.json'
 
 void describe('convert()', () => {
 	void describe('should convert devices messages to LwM2M objects', () => {
