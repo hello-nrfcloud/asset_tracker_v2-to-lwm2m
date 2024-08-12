@@ -9,9 +9,9 @@ import {
 	type Environment,
 } from 'aws-cdk-lib'
 import type { BackendLambdas } from './packBackendLambdas.js'
+import { ContinuousDeployment } from './resources/ContinuousDeployment.js'
 import { ConvertDeviceMessages } from './resources/ConvertDeviceMessages.js'
 import { STACK_NAME } from './stackConfig.js'
-import { ContinuousDeployment } from './resources/ContinuousDeployment.js'
 
 export class BackendStack extends Stack {
 	public constructor(

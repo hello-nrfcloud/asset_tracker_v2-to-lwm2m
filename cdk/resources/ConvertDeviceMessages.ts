@@ -4,9 +4,9 @@ import {
 } from '@bifravst/aws-cdk-lambda-helpers/cdk'
 import type { aws_lambda as Lambda } from 'aws-cdk-lib'
 import { aws_iam as IAM, aws_iot as IoT, Stack } from 'aws-cdk-lib'
+import type { ITable } from 'aws-cdk-lib/aws-dynamodb'
 import { Construct } from 'constructs'
 import type { BackendLambdas } from '../packBackendLambdas.js'
-import type { ITable } from 'aws-cdk-lib/aws-dynamodb'
 
 /**
  * Resources needed to convert messages sent by nRF Cloud to the format that hello.nrfcloud.com expects

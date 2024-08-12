@@ -1,14 +1,14 @@
 import { MetricUnit } from '@aws-lambda-powertools/metrics'
 import { logMetrics } from '@aws-lambda-powertools/metrics/middleware'
-import middy from '@middy/core'
-import { metricsForComponent } from '@hello.nrfcloud.com/lambda-helpers/metrics'
-import { logger } from '@hello.nrfcloud.com/lambda-helpers/logger'
-import { converter } from '../convert/converter.js'
 import {
 	IoTDataPlaneClient,
 	PublishCommand,
 } from '@aws-sdk/client-iot-data-plane'
+import { logger } from '@hello.nrfcloud.com/lambda-helpers/logger'
+import { metricsForComponent } from '@hello.nrfcloud.com/lambda-helpers/metrics'
 import { lwm2mToSenML } from '@hello.nrfcloud.com/proto-map/senml'
+import middy from '@middy/core'
+import { converter } from '../convert/converter.js'
 
 const iotData = new IoTDataPlaneClient()
 
