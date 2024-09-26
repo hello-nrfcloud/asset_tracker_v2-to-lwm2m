@@ -17,7 +17,7 @@ env:
 
 jobs:
   unit-tests:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
 
     outputs:
       ref: ${{ steps.ref.outputs.ref }}
@@ -53,7 +53,7 @@ jobs:
     needs:
       - unit-tests
 
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
 
     if: github.ref == 'refs/heads/saga'
 
