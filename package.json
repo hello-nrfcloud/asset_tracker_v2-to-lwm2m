@@ -75,7 +75,7 @@
   "prettier": "@bifravst/prettier-config",
   "dependencies": {
     "@aws-lambda-powertools/metrics": "2.11.0",
-    "@hello.nrfcloud.com/lambda-helpers": "2.0.48",
+    "@hello.nrfcloud.com/lambda-helpers": "2.0.49",
     "@hello.nrfcloud.com/proto-map": "16.1.19",
     "@middy/core": "5.5.1"
   }
