@@ -2,7 +2,7 @@ import { IAMClient } from '@aws-sdk/client-iam'
 import { STS } from '@aws-sdk/client-sts'
 import { ensureGitHubOIDCProvider } from '@bifravst/ci'
 import { env } from '../aws/env.js'
-import pJSON from '../package.json'
+import pJSON from '../package.json' assert { type: 'json' }
 import { BackendApp } from './BackendApp.js'
 import { pack as packBaseLayer } from './layers/baseLayer.js'
 import { packBackendLambdas } from './packBackendLambdas.js'

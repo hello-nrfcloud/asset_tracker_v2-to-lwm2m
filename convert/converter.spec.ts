@@ -9,13 +9,13 @@ import {
 import assert from 'node:assert/strict'
 import { describe, it } from 'node:test'
 import { converter } from './converter.js'
-import battery from './examples/BATTERY.json'
-import AIR_PRESS from './examples/nrfcloud/deviceToCloud/AIR_PRESS.json'
-import AIR_QUAL from './examples/nrfcloud/deviceToCloud/AIR_QUAL.json'
-import BUTTON from './examples/nrfcloud/deviceToCloud/BUTTON.json'
-import HUMID from './examples/nrfcloud/deviceToCloud/HUMID.json'
-import TEMP from './examples/nrfcloud/deviceToCloud/TEMP.json'
-import solar from './examples/SOLAR.json'
+import battery from './examples/BATTERY.json' assert { type: 'json' }
+import AIR_PRESS from './examples/nrfcloud/deviceToCloud/AIR_PRESS.json' assert { type: 'json' }
+import AIR_QUAL from './examples/nrfcloud/deviceToCloud/AIR_QUAL.json' assert { type: 'json' }
+import BUTTON from './examples/nrfcloud/deviceToCloud/BUTTON.json' assert { type: 'json' }
+import HUMID from './examples/nrfcloud/deviceToCloud/HUMID.json' assert { type: 'json' }
+import TEMP from './examples/nrfcloud/deviceToCloud/TEMP.json' assert { type: 'json' }
+import solar from './examples/SOLAR.json' assert { type: 'json' }
 
 void describe('convert()', () => {
 	void describe('should convert devices messages to LwM2M objects', () => {
